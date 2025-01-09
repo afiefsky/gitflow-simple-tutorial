@@ -118,3 +118,44 @@ This merges the hotfix branch into both `main` and `develop`, creates a version 
 - Use meaningful branch names.
 
 GitFlow helps maintain clean and organized workflows, ensuring smooth collaboration and deployment.
+
+---
+
+## 8. Example Flow: Start to Finish a Feature
+
+Here is an example of how to create, work on, and finish a feature branch using GitFlow:
+
+1. **Start a Feature Branch:**
+   ```bash
+   git flow feature start add-login-feature
+   ```
+   This creates a new branch `feature/add-login-feature` from `develop`.
+
+2. **Work on the Feature:**
+   - Make changes to the code.
+   - Stage and commit your changes:
+     ```bash
+     git add .
+     git commit -m "Implement user login functionality"
+     ```
+
+3. **Pull Updates from `develop` (Optional):**
+   To ensure your branch is up-to-date with the latest changes in `develop`:
+   ```bash
+   git pull origin develop
+   ```
+
+4. **Finish the Feature Branch:**
+   Once the feature is complete, finish it:
+   ```bash
+   git flow feature finish add-login-feature
+   ```
+   This will:
+   - Merge `feature/add-login-feature` into `develop`.
+   - Delete the `feature/add-login-feature` branch.
+
+5. **Push Changes to Remote:**
+   Finally, push the updated `develop` branch to the remote repository:
+   ```bash
+   git push origin develop
+   ```
